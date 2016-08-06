@@ -18,5 +18,5 @@ app.get('/:date', function (req, res) {
 });
 
 app.listen(port, function () {
-	console.log('Listening on port 8080!');
+	console.log('Listening on port', port);
 });
