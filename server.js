@@ -3,6 +3,8 @@ var app = express();
 
 var moment = require('moment');
 
+var port = process.env.PORT || 3000;
+
 app.get('/:date', function (req, res) {
 	var inputDate = (moment(req.params.date).isValid()) ? moment(req.params.date) : moment(req.params.date, 'X');
 	if(inputDate.isValid()) {
@@ -15,6 +17,6 @@ app.get('/:date', function (req, res) {
 	}
 });
 
-app.listen(8080, function () {
-	console.log('Example listening on port 8080!');
+app.listen(port, function () {
+	console.log('Listening on port 8080!');
 });
